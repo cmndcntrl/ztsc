@@ -74,7 +74,7 @@ def login():
     return render_template('login.html', form=form)
 
 @app.route('/upload', methods=['GET', 'POST'])
-@login_required
+#@login_required
 def upload():
     if request.method == 'POST':
         if 'photo' not in request.files:
