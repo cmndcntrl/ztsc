@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeta TSC</title>
+    
+    <!-- Favicon for most browsers -->
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" type="text/css">
+
+</head>
+    <body>
+    <div class="grid-container">
+                <header>
+                    <img src="{{ url_for('static', filename='img/ZTSC Header.png') }}" alt="Header Image" id="headerImage" style="width: 100%; height: auto;">
+                </header>
+                <nav>
+                    <div class="menu">
+                        <div class="menu-item">
+                            <a href="https://zeta-strike.local/">Home</a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">About</a>
+                            <div class="subnav">
+                                <a href="#history">History</a>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">Services</a>
+                            <div class="subnav">
+                                <a href="#threat-hunting">Threat Hunting</a>
+                                <a href="#digital-forensics">Digital Forensics</a>
+                                <a href="#incident-response">Incident Response</a>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">Contact</a>
+                        </div>
+                        <div class="menu-item">
+                            <button class="login-btn" onclick="location.href='/login'">Login</button>
+                        </div>
+                        <div class="menu-item">
+                            <form action="/register" method="get">
+                                <button type="submit" class="login-btn">RegisteSr</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            
+                <h1>Register</h1>
+                <form action="/register" method="get">
+                    <label for="username">Username:</label><br>
+                    <input type="text" id="username" name="username" required><br>
+            
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" required><br>
+
+                    <label for="password">Confirm Password:</label><br>
+                    <input type="password" id="password" name="password" required><br>
+                    
+                    <input type="submit" value="Submit">   
+                </form>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</div>
+</div>
+</html>

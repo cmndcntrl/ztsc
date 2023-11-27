@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeta TSC</title>
+    
+    <!-- Favicon for most browsers -->
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" type="text/css">
+
+</head>
+    <body>
+    <div class="grid-container">
+                <header>
+                    <img src="{{ url_for('static', filename='img/ZTSC Header.png') }}" alt="Header Image" id="headerImage" style="width: 100%; height: auto;">
+                </header>
+                <nav>
+                    <div class="menu">
+                        <div class="menu-item">
+                            <a href="https://zeta-strike.local/">Home</a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">About</a>
+                            <div class="subnav">
+                                <a href="#history">History</a>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">Services</a>
+                            <div class="subnav">
+                                <a href="#threat-hunting">Threat Hunting</a>
+                                <a href="#digital-forensics">Digital Forensics</a>
+                                <a href="#incident-response">Incident Response</a>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#">Contact</a>
+                        </div>
+                        <div class="menu-item">
+                            <button class="login-btn" onclick="location.href='/login'">Login</button>
+                        </div>
+                        <div class="menu-item">
+                            <form action="/register" method="get">
+                                <button type="submit" class="login-btn">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            
+                <div id="threat-hunting" class="grid-item">
+                    <div class="well-th">
+                        <div class="column.middle">
+                            <img src="{{ url_for('static', filename='img/Threat Hunting & bg.png') }}" style="width: 45%; height: auto; align-self: right">
+                            <div class="wrapper">
+                                <h3>Threat Hunting</h3>
+                                <p>Threat Hunting</p>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            
+                <div id="digital-forensics" class="grid-item">
+                    <div class="well-df">
+                        <div class="column.middle">
+                        <img src="{{ url_for('static', filename='img/Digital Forensics & bg.png') }}" style="width: 45%; height: auto; align-self: right">
+                        <div class="wrapper">
+                            <h3>Digital Forensics</h3>
+                            <p>Digital Forensics</p>
+                        </div>
+                    </div>
+                </div>
+                
+                    <div id="incident-response" class="grid-item">
+                        <div class="well-ir">
+                            <div class="column.middle">
+                            <img src="{{ url_for('static', filename='img/Incident Response & bg.png') }}" style="width: 45%; height: auto; align-self: right">
+                            <div class="wrapper">
+                                <h3>Incident Response</h3>
+                                <p>Incident Response</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div id="history">
+                        <div class="well-hist" class="grid-item">
+                        <img src="{{ url_for('static', filename='img/History BG.png') }}" style="width: 45%; height: auto; align-self: right">
+                            <div class="wrapper">
+                                <h3>History</h3>
+                                <p>History</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</div>
+</div>
+</html>
