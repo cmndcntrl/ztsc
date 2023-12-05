@@ -57,6 +57,7 @@ def register():
         existing_user = User.query.filter_by(username=username).first()
         if existing_user:
             flash('Username already exists.')
+            print('redirecting to register')
             return redirect(url_for('register'))
 
         # Create new user with hashed password
