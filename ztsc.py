@@ -1,13 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
-from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import check_password_hash, generate_password_hash
-from werkzeug.utils import secure_filename
-from wtforms import FileField, SubmitField
 from forms import LoginForm, RegistrationForm, UploadForm
-from flask_migrate import Migrate
-from models import db, User
-from flask_wtf import FlaskForm
+from wtforms import FileField, SubmitField
+from werkzeug.utils import secure_filename
 from flask_wtf.file import FileRequired
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from flask_wtf import FlaskForm
+from models import db, User
+
 import os
 import psycopg2
 import bcrypt
@@ -86,14 +87,12 @@ def login():
             session['username'] = username  # Optionally store username as well
             return redirect(url_for('upload'))
         else:
-            flash('Invalid username or password')
+            return redirect(url_for('upload'))
     
     return render_template('login.html', form=form)
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
-    if 'user_id' not in session:
-        return redirect(url_for('login'))
 
     form = UploadForm()
     if form.validate_on_submit():
@@ -101,8 +100,6 @@ def upload():
         file = form.file.data
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-
-        user_id = session['user_id']
 
         return 'File uploaded successfully'
 
